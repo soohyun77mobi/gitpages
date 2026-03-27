@@ -5,7 +5,7 @@ const ecosystems = [
     id: "huggingface",
     name: "HuggingFace",
     color: "#ff9d00",
-    bg: "#1a1200",
+    bg: "#fff8f0",
     desc: "모델 허브 + 오픈소스 ML 라이브러리 생태계. 학습/파인튜닝/배포용 도구가 촘촘하게 연결된 허브.",
     libs: ["Transformers", "PEFT", "TRL", "TGI", "Accelerate", "Datasets", "Tokenizers", "Diffusers"],
   },
@@ -13,7 +13,7 @@ const ecosystems = [
     id: "nvidia",
     name: "NVIDIA",
     color: "#76b900",
-    bg: "#0a1400",
+    bg: "#f4f9ed",
     desc: "GPU 하드웨어와 CUDA 기반 가속 스택의 중심. 대규모 학습/추론 인프라에서 영향력이 가장 큼.",
     libs: ["CUDA", "cuDNN", "TensorRT", "NeMo", "Triton Inference Server"],
   },
@@ -21,7 +21,7 @@ const ecosystems = [
     id: "google",
     name: "Google / DeepMind",
     color: "#4285f4",
-    bg: "#00071a",
+    bg: "#f0f4ff",
     desc: "JAX/Flax 연구 스택과 TPU, Vertex AI를 아우르는 생태계. 연구에서 클라우드 운영까지 이어짐.",
     libs: ["JAX", "Flax", "Keras", "TensorFlow", "Vertex AI", "TPU"],
   },
@@ -29,7 +29,7 @@ const ecosystems = [
     id: "meta",
     name: "Meta AI",
     color: "#0082fb",
-    bg: "#00071a",
+    bg: "#f0f4ff",
     desc: "PyTorch 중심 생태계와 Llama 계열 오픈 모델 영향력이 큰 축. 모델·학습·임베딩 인프라에 존재감이 큼.",
     libs: ["PyTorch", "FAISS", "torchtune", "ExecuTorch"],
   },
@@ -37,7 +37,7 @@ const ecosystems = [
     id: "microsoft",
     name: "Microsoft",
     color: "#00a4ef",
-    bg: "#00111a",
+    bg: "#f0f8ff",
     desc: "엔터프라이즈 AI 스택. DeepSpeed, ONNX Runtime, AutoGen, Semantic Kernel 등 운영 친화적 도구가 강점.",
     libs: ["DeepSpeed", "ONNX Runtime", "AutoGen", "Semantic Kernel", "Azure OpenAI"],
   },
@@ -45,7 +45,7 @@ const ecosystems = [
     id: "langchain",
     name: "LangChain",
     color: "#1c7ed6",
-    bg: "#00071a",
+    bg: "#f0f4ff",
     desc: "LLM 앱/에이전트 개발 생태계. 빠른 시작용 고수준 API와, LangGraph 기반 저수준 오케스트레이션을 함께 제공.",
     libs: ["LangChain", "LangGraph", "LangSmith"],
   },
@@ -70,9 +70,9 @@ const layers = [
     id: "hardware",
     label: "Layer 0",
     title: "Hardware / Driver Layer",
-    color: "#1a1a2e",
+    color: "#fef2f2",
     accent: "#e94560",
-    textColor: "#ff6b8a",
+    textColor: "#be123c",
     description: "물리적 연산 장치와 저수준 드라이버/런타임. 모든 학습·추론의 기반이 되는 최하단 계층.",
     libs: [
       { name: "CUDA", org: "NVIDIA", ecosystem: "nvidia", desc: "NVIDIA GPU 병렬 연산 플랫폼이자 핵심 소프트웨어 스택. 현대 GPU 학습/추론의 중심 축", use: "GPU 연산 기반", hot: true },
@@ -87,9 +87,9 @@ const layers = [
     id: "compute",
     label: "Layer 1",
     title: "Numerical / Tensor Compute Layer",
-    color: "#16213e",
-    accent: "#f5a623",
-    textColor: "#ffc85c",
+    color: "#fffbeb",
+    accent: "#d97706",
+    textColor: "#92400e",
     description: "텐서 연산, 자동미분, 컴파일/JIT 등 수학적 실행 엔진 계층. 모델 학습/추론의 핵심 런타임.",
     libs: [
       { name: "PyTorch", org: "Meta", ecosystem: "meta", desc: "동적 그래프 중심 딥러닝 프레임워크. 연구와 실무 모두에서 가장 널리 쓰이는 축 중 하나", use: "모델 개발/학습", hot: true },
@@ -105,9 +105,9 @@ const layers = [
     id: "training",
     label: "Layer 2",
     title: "Training / Fine-tuning / Data Pipeline Layer",
-    color: "#0f3460",
-    accent: "#00b4d8",
-    textColor: "#48cae4",
+    color: "#ecfeff",
+    accent: "#0891b2",
+    textColor: "#155e75",
     description: "모델 학습, 파인튜닝, 데이터 파이프라인에 가까운 계층. 대규모 분산학습부터 소비자 GPU 기반 LoRA까지 포함.",
     libs: [
       { name: "Transformers", org: "HuggingFace", ecosystem: "huggingface", desc: "사전학습 모델 로딩/학습/추론용 범용 라이브러리. 텍스트 모델 생태계의 중심 축", use: "모델 로드/파인튜닝", hot: true },
@@ -130,9 +130,9 @@ const layers = [
     id: "inference",
     label: "Layer 3",
     title: "Inference / Optimization / Serving Layer",
-    color: "#1b4332",
-    accent: "#52b788",
-    textColor: "#74c69d",
+    color: "#ecfdf5",
+    accent: "#059669",
+    textColor: "#065f46",
     description: "학습된 모델을 빠르게 실행하고 서비스로 노출하는 계층. 처리량, 지연시간, 메모리 효율, 운영 편의성이 핵심.",
     libs: [
       { name: "vLLM", org: "vLLM Project", ecosystem: null, desc: "PagedAttention 기반 고성능 LLM 서빙 엔진. OpenAI 호환 서버 인터페이스 제공", use: "고성능 LLM 서빙", hot: true },
@@ -153,9 +153,9 @@ const layers = [
     id: "platform",
     label: "Layer 4",
     title: "MLOps / Platform / Evaluation Layer",
-    color: "#3d1a78",
-    accent: "#b98eff",
-    textColor: "#c9a9ff",
+    color: "#f5f3ff",
+    accent: "#7c3aed",
+    textColor: "#5b21b6",
     description: "실험 추적, 평가, 배포 자동화, 데이터/모델 관리 계층. 연구 산출물을 운영 환경으로 연결하는 브리지.",
     libs: [
       { name: "Weights & Biases", org: "W&B", ecosystem: null, desc: "실험 추적, sweep, 아티팩트/모델 관리, 평가를 제공하는 대표 플랫폼", use: "실험 관리/관측성", hot: true },
@@ -172,9 +172,9 @@ const layers = [
     id: "application",
     label: "Layer 5",
     title: "Application / Agent / Orchestration Layer",
-    color: "#4a1942",
-    accent: "#ff6eb4",
-    textColor: "#ff9ccc",
+    color: "#fdf2f8",
+    accent: "#db2777",
+    textColor: "#9d174d",
     description: "LLM 앱, 에이전트, RAG, 멀티스텝 워크플로우를 구성하는 계층. 최근에는 MCP, tool calling, durable workflow, observability가 핵심 평가 포인트.",
     libs: [
       {
@@ -273,9 +273,9 @@ const layers = [
     id: "data",
     label: "Layer 6",
     title: "Data / Embedding / Retrieval Layer",
-    color: "#1a3a4a",
-    accent: "#00cfcf",
-    textColor: "#4de8e8",
+    color: "#f0fdfa",
+    accent: "#0d9488",
+    textColor: "#115e59",
     description: "벡터 저장소, 임베딩, 검색 인덱스 계층. RAG의 저장·검색 기반을 담당.",
     libs: [
       { name: "Chroma", org: "Chroma", ecosystem: null, desc: "로컬 개발과 프로토타이핑에 쉬운 오픈소스 벡터 DB", use: "벡터 검색 (개발)", hot: true },
@@ -356,8 +356,8 @@ function CapabilityPill({ capId }) {
       style={{
         fontSize: "8px",
         color: meta.color,
-        background: `${meta.color}14`,
-        border: `1px solid ${meta.color}35`,
+        background: `${meta.color}18`,
+        border: `1px solid ${meta.color}40`,
         padding: "2px 6px",
         borderRadius: "999px",
         letterSpacing: "0.3px",
@@ -391,28 +391,28 @@ export default function AIEcosystem() {
 
   return (
     <div style={{
-      background: "#080c14",
+      background: "linear-gradient(180deg, #fcfdff 0%, #f4f7fb 100%)",
       minHeight: "100vh",
-      fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
-      color: "#c8d6e5",
+      fontFamily: "'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+      color: "#121417",
     }}>
       <div style={{
-        borderBottom: "1px solid #1e2d3d",
+        borderBottom: "1px solid #e5e8eb",
         padding: "24px 40px",
-        background: "linear-gradient(180deg, #0d1b2a 0%, #080c14 100%)",
+        background: "rgba(255, 255, 255, 0.85)",
         position: "sticky",
         top: 0,
         zIndex: 100,
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(14px)",
       }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px", gap: "20px", flexWrap: "wrap" }}>
             <div>
-              <div style={{ fontSize: "10px", color: "#4a6fa5", letterSpacing: "4px", marginBottom: "4px" }}>FIELD GUIDE v3</div>
-              <h1 style={{ margin: 0, fontSize: "20px", fontWeight: 700, color: "#e8f4fd" }}>
+              <div style={{ fontSize: "10px", color: "#2563eb", letterSpacing: "4px", marginBottom: "4px", fontFamily: "'SFMono-Regular', 'JetBrains Mono', monospace" }}>FIELD GUIDE v3</div>
+              <h1 style={{ margin: 0, fontSize: "20px", fontWeight: 700, color: "#121417" }}>
                 AI / ML / Agent Ecosystem
               </h1>
-              <div style={{ fontSize: "10px", color: "#4a6fa5", marginTop: "3px" }}>
+              <div style={{ fontSize: "10px", color: "#8b95a1", marginTop: "3px" }}>
                 {totalLibs} libraries · {layers.length} layers · {ecosystems.length} ecosystems
               </div>
             </div>
@@ -423,13 +423,14 @@ export default function AIEcosystem() {
                   onClick={() => setView(v)}
                   style={{
                     padding: "6px 14px",
-                    background: view === v ? "#1e3a5f" : "transparent",
-                    border: `1px solid ${view === v ? "#4a90d9" : "#1e2d3d"}`,
-                    borderRadius: "4px",
-                    color: view === v ? "#7eb8f7" : "#4a6fa5",
+                    background: view === v ? "#121417" : "transparent",
+                    border: `1px solid ${view === v ? "transparent" : "#cdd3da"}`,
+                    borderRadius: "99px",
+                    color: view === v ? "#ffffff" : "#4e5968",
                     cursor: "pointer",
-                    fontSize: "10px",
-                    letterSpacing: "1px",
+                    fontSize: "11px",
+                    fontFamily: "'Pretendard', sans-serif",
+                    letterSpacing: "0.5px",
                     textTransform: "uppercase",
                   }}
                 >
@@ -444,12 +445,13 @@ export default function AIEcosystem() {
               onClick={() => setFilterEco(null)}
               style={{
                 padding: "4px 12px",
-                background: !filterEco ? "#1e3a5f" : "transparent",
-                border: `1px solid ${!filterEco ? "#4a90d9" : "#1e2d3d"}`,
+                background: !filterEco ? "#121417" : "transparent",
+                border: `1px solid ${!filterEco ? "transparent" : "#cdd3da"}`,
                 borderRadius: "20px",
-                color: !filterEco ? "#7eb8f7" : "#4a6fa5",
+                color: !filterEco ? "#ffffff" : "#4e5968",
                 cursor: "pointer",
-                fontSize: "10px",
+                fontSize: "11px",
+                fontFamily: "'Pretendard', sans-serif",
               }}
             >
               All
@@ -460,12 +462,13 @@ export default function AIEcosystem() {
                 onClick={() => setFilterEco(filterEco === eco.id ? null : eco.id)}
                 style={{
                   padding: "4px 12px",
-                  background: filterEco === eco.id ? `${eco.color}20` : "transparent",
-                  border: `1px solid ${filterEco === eco.id ? eco.color + "80" : "#1e2d3d"}`,
+                  background: filterEco === eco.id ? `${eco.color}15` : "transparent",
+                  border: `1px solid ${filterEco === eco.id ? eco.color + "60" : "#cdd3da"}`,
                   borderRadius: "20px",
-                  color: filterEco === eco.id ? eco.color : "#4a6fa5",
+                  color: filterEco === eco.id ? eco.color : "#4e5968",
                   cursor: "pointer",
-                  fontSize: "10px",
+                  fontSize: "11px",
+                  fontFamily: "'Pretendard', sans-serif",
                   transition: "all 0.15s",
                 }}
               >
@@ -479,12 +482,13 @@ export default function AIEcosystem() {
               onClick={() => setCapabilityFilter(null)}
               style={{
                 padding: "4px 10px",
-                background: !capabilityFilter ? "#31224e" : "transparent",
-                border: `1px solid ${!capabilityFilter ? "#b98eff" : "#1e2d3d"}`,
+                background: !capabilityFilter ? "#7c3aed" : "transparent",
+                border: `1px solid ${!capabilityFilter ? "transparent" : "#cdd3da"}`,
                 borderRadius: "20px",
-                color: !capabilityFilter ? "#d8c2ff" : "#6b5b8f",
+                color: !capabilityFilter ? "#ffffff" : "#8b95a1",
                 cursor: "pointer",
-                fontSize: "10px",
+                fontSize: "11px",
+                fontFamily: "'Pretendard', sans-serif",
               }}
             >
               App tags: All
@@ -495,12 +499,13 @@ export default function AIEcosystem() {
                 onClick={() => setCapabilityFilter(capabilityFilter === cap.id ? null : cap.id)}
                 style={{
                   padding: "4px 10px",
-                  background: capabilityFilter === cap.id ? `${cap.color}18` : "transparent",
-                  border: `1px solid ${capabilityFilter === cap.id ? `${cap.color}80` : "#1e2d3d"}`,
+                  background: capabilityFilter === cap.id ? `${cap.color}15` : "transparent",
+                  border: `1px solid ${capabilityFilter === cap.id ? `${cap.color}60` : "#cdd3da"}`,
                   borderRadius: "20px",
-                  color: capabilityFilter === cap.id ? cap.color : "#6b5b8f",
+                  color: capabilityFilter === cap.id ? cap.color : "#8b95a1",
                   cursor: "pointer",
-                  fontSize: "10px",
+                  fontSize: "11px",
+                  fontFamily: "'Pretendard', sans-serif",
                 }}
                 title={cap.desc}
               >
@@ -514,7 +519,7 @@ export default function AIEcosystem() {
       <div style={{ padding: "28px 40px", maxWidth: "1240px", margin: "0 auto" }}>
         {!filterEco && (
           <div style={{ marginBottom: "32px" }}>
-            <div style={{ fontSize: "10px", color: "#4a6fa5", letterSpacing: "2px", marginBottom: "12px" }}>
+            <div style={{ fontSize: "11px", color: "#8b95a1", letterSpacing: "2px", marginBottom: "12px", fontWeight: 500 }}>
               MAJOR ECOSYSTEMS
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "8px" }}>
@@ -524,18 +529,19 @@ export default function AIEcosystem() {
                   onClick={() => setFilterEco(eco.id)}
                   style={{
                     padding: "14px 16px",
-                    background: "#0d1b2a",
-                    border: `1px solid #1e2d3d`,
+                    background: "#ffffff",
+                    border: `1px solid #e5e8eb`,
                     borderLeft: `3px solid ${eco.color}`,
-                    borderRadius: "6px",
+                    borderRadius: "14px",
                     cursor: "pointer",
                     transition: "all 0.15s",
+                    boxShadow: "0 2px 8px rgba(18, 20, 23, 0.04)",
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
                     <span style={{ fontSize: "13px", fontWeight: 700, color: eco.color }}>{eco.name}</span>
                   </div>
-                  <div style={{ fontSize: "10px", color: "#4a6fa5", lineHeight: 1.5, marginBottom: "8px" }}>
+                  <div style={{ fontSize: "11px", color: "#4e5968", lineHeight: 1.5, marginBottom: "8px" }}>
                     {eco.desc}
                   </div>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
@@ -545,8 +551,8 @@ export default function AIEcosystem() {
                         style={{
                           fontSize: "9px",
                           color: eco.color,
-                          background: eco.color + "15",
-                          border: `1px solid ${eco.color}30`,
+                          background: eco.color + "12",
+                          border: `1px solid ${eco.color}25`,
                           padding: "2px 6px",
                           borderRadius: "3px",
                         }}
@@ -576,21 +582,22 @@ export default function AIEcosystem() {
                       alignItems: "center",
                       gap: "16px",
                       padding: "13px 20px",
-                      background: isActive ? `${layer.color}ee` : `${layer.color}88`,
-                      border: `1px solid ${isActive ? layer.accent + "60" : "#1e2d3d"}`,
-                      borderRadius: isActive ? "8px 8px 0 0" : "6px",
+                      background: isActive ? layer.color : "#ffffff",
+                      border: `1px solid ${isActive ? layer.accent + "30" : "#e5e8eb"}`,
+                      borderRadius: isActive ? "14px 14px 0 0" : "14px",
                       cursor: "pointer",
                       transition: "all 0.2s ease",
                       borderLeft: `3px solid ${layer.accent}`,
+                      boxShadow: "0 2px 8px rgba(18, 20, 23, 0.04)",
                     }}
                   >
-                    <div style={{ fontSize: "10px", color: layer.accent, letterSpacing: "2px", minWidth: "52px", fontWeight: 700 }}>
+                    <div style={{ fontSize: "10px", color: layer.accent, letterSpacing: "2px", minWidth: "52px", fontWeight: 700, fontFamily: "'SFMono-Regular', 'JetBrains Mono', monospace" }}>
                       {layer.label}
                     </div>
-                    <div style={{ fontSize: "13px", color: "#e8f4fd", fontWeight: 600, flex: 1 }}>
+                    <div style={{ fontSize: "13px", color: "#121417", fontWeight: 600, flex: 1 }}>
                       {layer.title}
                     </div>
-                    <div style={{ fontSize: "10px", color: "#4a6fa5", marginRight: "8px" }}>
+                    <div style={{ fontSize: "10px", color: "#8b95a1", marginRight: "8px" }}>
                       {layer.libs.length} libs
                     </div>
                     <div
@@ -608,14 +615,14 @@ export default function AIEcosystem() {
                   {isActive && (
                     <div
                       style={{
-                        background: `${layer.color}44`,
-                        border: `1px solid ${layer.accent}25`,
+                        background: `${layer.color}`,
+                        border: `1px solid ${layer.accent}20`,
                         borderTop: "none",
-                        borderRadius: "0 0 8px 8px",
+                        borderRadius: "0 0 14px 14px",
                         padding: "18px",
                       }}
                     >
-                      <p style={{ fontSize: "11px", color: "#5a7fa5", margin: "0 0 16px 0", lineHeight: 1.6 }}>
+                      <p style={{ fontSize: "12px", color: "#4e5968", margin: "0 0 16px 0", lineHeight: 1.6 }}>
                         {layer.description}
                       </p>
                       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "8px" }}>
@@ -632,11 +639,12 @@ export default function AIEcosystem() {
                               }}
                               style={{
                                 padding: "13px 15px",
-                                background: isSelected ? `${layer.accent}12` : "#0b1520",
-                                border: `1px solid ${isSelected ? layer.accent + "70" : isRelated ? "#f5a62330" : "#1a2a3a"}`,
-                                borderRadius: "6px",
+                                background: isSelected ? `${layer.accent}08` : "#ffffff",
+                                border: `1px solid ${isSelected ? layer.accent + "50" : isRelated ? layer.accent + "30" : "#e5e8eb"}`,
+                                borderRadius: "14px",
                                 cursor: "pointer",
                                 transition: "all 0.15s ease",
+                                boxShadow: "0 1px 4px rgba(18, 20, 23, 0.04)",
                               }}
                             >
                               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "5px", flexWrap: "wrap" }}>
@@ -644,19 +652,19 @@ export default function AIEcosystem() {
                                   {lib.name}
                                 </span>
                                 {lib.hot && (
-                                  <span style={{ fontSize: "8px", background: "#ff4d4d18", color: "#ff6b6b", border: "1px solid #ff4d4d35", padding: "1px 5px", borderRadius: "3px", letterSpacing: "1px" }}>
+                                  <span style={{ fontSize: "8px", background: "#fef2f2", color: "#dc2626", border: "1px solid #fecaca", padding: "1px 5px", borderRadius: "3px", letterSpacing: "1px" }}>
                                     HOT
                                   </span>
                                 )}
                                 {ecoColor && (
-                                  <span style={{ fontSize: "8px", color: ecoColor, background: ecoColor + "15", border: `1px solid ${ecoColor}30`, padding: "1px 6px", borderRadius: "3px", marginLeft: "2px" }}>
+                                  <span style={{ fontSize: "8px", color: ecoColor, background: ecoColor + "10", border: `1px solid ${ecoColor}25`, padding: "1px 6px", borderRadius: "3px", marginLeft: "2px" }}>
                                     {ecoNames[lib.ecosystem]}
                                   </span>
                                 )}
-                                <span style={{ fontSize: "9px", color: "#2a4060", marginLeft: "auto" }}>{lib.org}</span>
+                                <span style={{ fontSize: "9px", color: "#8b95a1", marginLeft: "auto" }}>{lib.org}</span>
                               </div>
 
-                              <div style={{ fontSize: "10px", color: "#4a6080", lineHeight: 1.5, marginBottom: "7px" }}>
+                              <div style={{ fontSize: "11px", color: "#4e5968", lineHeight: 1.5, marginBottom: "7px" }}>
                                 {lib.desc}
                               </div>
 
@@ -666,8 +674,8 @@ export default function AIEcosystem() {
                                     display: "inline-block",
                                     fontSize: "9px",
                                     color: layer.accent,
-                                    background: layer.accent + "12",
-                                    border: `1px solid ${layer.accent}25`,
+                                    background: layer.accent + "10",
+                                    border: `1px solid ${layer.accent}20`,
                                     padding: "2px 7px",
                                     borderRadius: "3px",
                                   }}
@@ -679,14 +687,14 @@ export default function AIEcosystem() {
 
                               {isSelected && (
                                 <div style={{ marginTop: "10px", paddingTop: "10px", borderTop: `1px solid ${layer.accent}25` }}>
-                                  <div style={{ fontSize: "9px", color: "#3a5070", marginBottom: "5px", letterSpacing: "1px" }}>CONNECTED TO</div>
+                                  <div style={{ fontSize: "9px", color: "#8b95a1", marginBottom: "5px", letterSpacing: "1px" }}>CONNECTED TO</div>
                                   <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
                                     {(relationshipMap[lib.name] || []).map((dep) => (
-                                      <span key={dep} style={{ fontSize: "9px", color: "#f5a623", background: "#f5a62310", border: "1px solid #f5a62328", padding: "2px 7px", borderRadius: "3px" }}>
+                                      <span key={dep} style={{ fontSize: "9px", color: "#d97706", background: "#fffbeb", border: "1px solid #fde68a", padding: "2px 7px", borderRadius: "3px" }}>
                                         {dep}
                                       </span>
                                     ))}
-                                    {!relationshipMap[lib.name] && <span style={{ fontSize: "9px", color: "#1e3050" }}>—</span>}
+                                    {!relationshipMap[lib.name] && <span style={{ fontSize: "9px", color: "#cdd3da" }}>—</span>}
                                   </div>
                                 </div>
                               )}
@@ -713,19 +721,20 @@ export default function AIEcosystem() {
                     key={`${lib.layerId}-${lib.name}`}
                     style={{
                       padding: "12px",
-                      background: "#0d1b2a",
-                      border: `1px solid #1a2a3a`,
+                      background: "#ffffff",
+                      border: `1px solid #e5e8eb`,
                       borderTop: `2px solid ${lib.layerAccent}`,
-                      borderRadius: "5px",
+                      borderRadius: "14px",
+                      boxShadow: "0 1px 4px rgba(18, 20, 23, 0.04)",
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "3px", flexWrap: "wrap" }}>
                       <span style={{ fontSize: "11px", fontWeight: 700, color: lib.layerAccent }}>{lib.name}</span>
-                      {lib.hot && <span style={{ fontSize: "7px", color: "#ff6b6b", background: "#ff4d4d12", border: "1px solid #ff4d4d28", padding: "1px 4px", borderRadius: "2px" }}>HOT</span>}
+                      {lib.hot && <span style={{ fontSize: "7px", color: "#dc2626", background: "#fef2f2", border: "1px solid #fecaca", padding: "1px 4px", borderRadius: "2px" }}>HOT</span>}
                     </div>
                     {ecoColor && <div style={{ fontSize: "8px", color: ecoColor, marginBottom: "4px" }}>{ecoNames[lib.ecosystem]}</div>}
-                    <div style={{ fontSize: "8px", color: "#2a4060", marginBottom: "6px" }}>{lib.layerTitle.split("/")[0]}</div>
-                    <div style={{ fontSize: "9px", color: "#3a5575", lineHeight: 1.4, marginBottom: lib.capabilities?.length ? "8px" : 0 }}>
+                    <div style={{ fontSize: "8px", color: "#8b95a1", marginBottom: "6px" }}>{lib.layerTitle.split("/")[0]}</div>
+                    <div style={{ fontSize: "10px", color: "#4e5968", lineHeight: 1.4, marginBottom: lib.capabilities?.length ? "8px" : 0 }}>
                       {lib.desc.length > 84 ? lib.desc.slice(0, 84) + "…" : lib.desc}
                     </div>
                     {lib.capabilities?.length ? (
@@ -739,8 +748,8 @@ export default function AIEcosystem() {
           </div>
         )}
 
-        <div style={{ marginTop: "36px", padding: "22px", background: "#0a1628", border: "1px solid #1a2a3a", borderRadius: "8px" }}>
-          <div style={{ fontSize: "10px", color: "#4a6fa5", letterSpacing: "2px", marginBottom: "18px" }}>QUICK DECISION GUIDE</div>
+        <div style={{ marginTop: "36px", padding: "22px", background: "#ffffff", border: "1px solid #e5e8eb", borderRadius: "20px", boxShadow: "0 2px 12px rgba(18, 20, 23, 0.04)" }}>
+          <div style={{ fontSize: "11px", color: "#8b95a1", letterSpacing: "2px", marginBottom: "18px", fontWeight: 500 }}>QUICK DECISION GUIDE</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "12px" }}>
             {[
               { q: "로컬에서 LLM 빠르게 실행", a: "Ollama → llama.cpp", color: "#52b788" },
@@ -757,7 +766,7 @@ export default function AIEcosystem() {
               { q: "MCP 기반 외부 도구 연동", a: "LangGraph / CrewAI / AutoGen / Semantic Kernel / DSPy", color: "#7dd3fc" },
             ].map((item) => (
               <div key={item.q} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                <div style={{ fontSize: "10px", color: "#4a6fa5" }}>▸ {item.q}</div>
+                <div style={{ fontSize: "11px", color: "#4e5968" }}>▸ {item.q}</div>
                 <div style={{ fontSize: "11px", color: item.color, fontWeight: 600, paddingLeft: "10px" }}>→ {item.a}</div>
               </div>
             ))}
